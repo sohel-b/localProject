@@ -1,0 +1,115 @@
+What is MongoDB?
+What is a NoSQL database?
+How does MongoDB differ from traditional relational databases?
+What is a document in MongoDB?
+What is a collection?
+What is the Mongo Shell / Compass?
+
+
+🔹 CRUD Operations
+How do you insert a document into a collection?
+How do you retrieve (read) documents from a collection?
+How do you update a document?
+How do you delete a document?
+What's the difference between insertOne() and insertMany()?
+What's the difference between updateOne() and updateMany()?
+
+
+🔹 Querying
+How do you use comparison operators like $gt, $lt, $eq, $in?
+What is projection in MongoDB?
+How do you filter embedded documents?
+What is the $or and $and operator?
+
+
+🔹 Indexes
+What is an index in MongoDB?
+Why are indexes important?
+What is a compound index?
+How do you create and remove an index?
+
+
+🔹 Aggregation
+What is the aggregation pipeline?
+What are the main aggregation stages ($match, $group, $sort, $project)?
+How is aggregation different from a regular query?
+When would you use aggregation?
+
+
+🔹 Data Modeling
+When should you embed data vs reference it?
+What is schema design in MongoDB?
+How does MongoDB handle relationships?
+
+
+🔹 Advanced
+What is the role of _id in MongoDB?
+How does MongoDB handle large amounts of data?
+What is sharding in MongoDB?
+What is replication in MongoDB?
+What is a replica set?
+
+
+🔹 Mongoose (for Node.js Users)
+What is Mongoose and why use it?
+How do you define a schema with Mongoose?
+What are Mongoose models?
+How do you perform validations in Mongoose?
+
+
+🔹 Schema Design & Best Practices
+What is schema-less in MongoDB?
+Can MongoDB enforce schema rules? (Hint: JSON Schema validation)
+What are common schema design patterns (e.g. bucket pattern, extended reference)?
+What’s the 16MB document size limit in MongoDB?
+How do you avoid data duplication in MongoDB?
+
+
+🔹 Data Types & BSON
+What is BSON in MongoDB?
+What data types does MongoDB support?
+How does MongoDB handle date/time fields?
+What’s the difference between null, undefined, and missing fields?
+
+
+🔹 Working with Arrays
+How do you store arrays in MongoDB documents?
+How do you query an array for a specific value?
+What is $elemMatch?
+How do you update a specific item in an array?
+What is the positional $ operator?
+
+
+🔹 Text Search & Regex
+How do you perform a text search in MongoDB?
+How do you use regular expressions in MongoDB queries?
+What is a text index and how do you create one?
+
+
+🔹 Transactions
+Does MongoDB support transactions?
+What are multi-document transactions and when should you use them?
+How do you start a transaction in MongoDB?
+
+
+🔹 Security
+How do you secure a MongoDB deployment?
+What is role-based access control (RBAC)?
+How does authentication work in MongoDB?
+What is whitelisting IPs in MongoDB Atlas?
+
+
+🔹 Admin & Monitoring
+How do you check the performance of a MongoDB database?
+What is explain() in MongoDB?
+How do you see index usage stats?
+How do you back up and restore a MongoDB database?
+What is MongoDB Atlas?
+
+
+🔹 Useful Commands (Mongo Shell or Compass)
+db.collection.find() – Read documents
+db.collection.insertOne() – Insert one document
+db.collection.updateOne() – Update one document
+db.collection.deleteOne() – Delete one document
+db.collection.aggregate() – Run an aggregation pipeline

@@ -1,0 +1,80 @@
+What are the different data types in JavaScript?
+What is the difference between var, let, and const?
+What are truthy and falsy values?
+What is the difference between == and ===?
+What are JavaScript reserved keywords?
+How does hoisting work in JavaScript?
+
+
+🔹 Functions
+What is a function declaration vs function expression?
+What are arrow functions and how are they different?
+What is a callback function?
+What is the difference between synchronous and asynchronous functions?
+What is recursion?
+
+
+🔹 Scope & Closures
+What is the difference between global, function, and block scope?
+What is lexical scope?
+What is a closure and how does it work?
+Give an example of a closure use case.
+
+
+🔹 Objects & Arrays
+How do you create an object in JavaScript?
+What are the different ways to clone an object?
+How do you loop through an object or array?
+What are common array methods like map, filter, reduce, forEach?
+What is destructuring?
+
+
+🔹 This Keyword
+What is this in JavaScript?
+How does this behave in arrow functions vs normal functions?
+What is the use of call, apply, and bind?
+
+
+🔹 ES6+ Features
+What are template literals?
+What are default parameters?
+What are rest and spread operators?
+What is object shorthand?
+What is optional chaining (?.)?
+
+
+🔹 Asynchronous JavaScript
+What are Promises?
+What is async/await and how does it work?
+What is the event loop?
+What is the call stack and task queue?
+What is a microtask vs macrotask?
+
+
+🔹 DOM & BOM
+What is the DOM?
+How do you select and manipulate elements using JavaScript?
+What is event delegation?
+What are event bubbling and capturing?
+How do you handle events (addEventListener)?
+
+
+🔹 Error Handling
+What is try...catch used for?
+What are common types of errors in JS (ReferenceError, TypeError, etc.)?
+
+
+🔹 Advanced Concepts
+What is prototypal inheritance?
+What are constructors and the new keyword?
+What are classes in JavaScript?
+What is the difference between == and Object.is()?
+What is a Symbol?
+What is a generator function?
+What is a WeakMap and WeakSet?
+
+
+🔹 Modules & Imports
+What is the difference between CommonJS and ES Modules?
+How do you import and export in JavaScript?
+What is dynamic import?

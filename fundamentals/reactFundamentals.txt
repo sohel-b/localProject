@@ -1,0 +1,109 @@
+What is React?
+What are components in React?
+What is the difference between functional and class components?
+What is JSX?
+What is the virtual DOM and how does it work in React?
+
+
+🔹 State and Props
+What are props in React?
+What is state in React?
+How do props differ from state?
+How do you update state in a React component?
+What happens when you set state in React?
+
+
+🔹 Hooks
+What is the purpose of the useState hook?
+How does useEffect work and when would you use it?
+Can you explain the difference between useEffect and useLayoutEffect?
+What are custom hooks in React?
+What is the purpose of useRef?
+
+
+🔹 Rendering & Lifecycle
+What is conditional rendering in React?
+How does React handle re-rendering?
+What are React lifecycle methods (in class components)?
+What is the equivalent of lifecycle methods in functional components?
+How can you optimize performance in React components?
+
+
+🔹 Event Handling & Forms
+How do you handle events in React?
+How do you handle forms and form submission in React?
+What is controlled vs uncontrolled component?
+How do you manage multiple input fields in a form?
+
+
+🔹 Lists and Keys
+How do you render a list in React?
+Why is the key prop important in lists?
+
+
+🔹 Advanced (Still Core)
+What is context in React and when should you use it?
+What is React Fragment and why is it used?
+What is prop drilling and how can you avoid it?
+What are higher-order components (HOC)?
+
+
+🔹 React Routing (if using react-router)
+What is React Router?
+What is the difference between <Route> and <Switch> (or <Routes> in v6)?
+How do you pass parameters via routes in React Router?
+How do you navigate programmatically in React Router?
+What is a nested route and how is it handled?
+
+
+🔹 React Keys and Lists (Extended)
+What happens if you don’t use a unique key in a list?
+Can the index of an array be used as a key? When is it okay and when is it not?
+
+
+🔹 Error Handling
+How do you handle errors in React?
+What is an Error Boundary?
+Can hooks be used inside Error Boundaries? Why or why not?
+
+
+🔹 Conditional Rendering (Extended)
+Different ways to do conditional rendering in React?
+What is short-circuit evaluation in JSX?
+How do you show a loading spinner while waiting for data in React?
+
+
+🔹 React Performance
+What is memoization in React?
+What is the use of React.memo()?
+What is useMemo() and when should you use it?
+What is useCallback() and why is it useful?
+
+
+🔹 React Best Practices & Patterns
+Why should state be as local as possible?
+What is the "lifting state up" pattern?
+What is composition in React and why is it preferred over inheritance?
+What is a "presentational" vs "container" component?
+How do you structure a scalable React project?
+
+
+🔹 React Dev Tools & Debugging
+How do you debug a React app?
+What is React DevTools and how is it useful?
+How can you log state or props updates efficiently?
+
+
+🔹 React and APIs
+How do you fetch data in React?
+What are the common patterns for handling async operations in React?
+How do you cancel a fetch request in React (e.g., if a component unmounts)?
+
+
+🔹 Miscellaneous but Useful
+Why can't you use hooks inside loops or conditionals?
+What are rules of hooks?
+What are portals in React?
+How do you handle modals in React?
+What is reconciliation in React?
+How does React decide whether to re-render a component?

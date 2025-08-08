@@ -1,0 +1,112 @@
+React Lifecycle
+  ==> Lifecycle of Components, The three phases are: Mounting, Updating, and Unmounting.
+Mounting (Mounting means putting elements into the DOM)  
+    type1: with constructor   The constructor method is called, by React, every time you make a component: (method is called before anything else, when the component is initiated)
+        Example with constructor -->
+        class Header extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {favoritecolor: "red"};
+            }
+            render() {
+                return (
+                <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+                );
+            }
+        }
+        ReactDOM.render(<Header />, document.getElementById('root'));
+
+    type2: with render 
+        class Header extends React.Component {
+            render() {
+                return (
+                <h1>This is the content of the Header component</h1>
+                );
+            }
+        }
+        ReactDOM.render(<Header />, document.getElementById('root'));
+
+    type3: with componentDidMount   The componentDidMount() method is called after the component is rendered.
+    class Header extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {favoritecolor: "red"};
+        }
+        componentDidMount() {
+            setTimeout(() => {
+            this.setState({favoritecolor: "yellow"})
+            }, 1000)
+        }
+        render() {
+            return (
+            <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+            );
+        }
+    }
+    ReactDOM.render(<Header />, document.getElementById('root'));
+
+Updating (componentDidUpdate)
+    type1:  The componentDidUpdate method is called after the component is updated in the DOM.
+
+Unmounting (componentWillUnmount)   // The next phase in the lifecycle is when a component is removed from the DOM, or unmounting as React likes to call it.
+    type1: with componentWillUnmount    The componentWillUnmount method is called when the component is about to be removed from the DOM.
+
+
+
+notes link for all hooks concepts https://drive.google.com/drive/folders/1-wk8nrebq2jM17T9pOkoXmyp83jk8fNo
+
+
+useEffect ==> 
+useEffect(() => {
+    // callback Function(what to happen)
+}, // dependency(when to happen) )
+    useEffect without any dependency:  it runs with first render and also run on anything changes in that component
+    useEffect with empty Array: it runs only on first render. Useful for Fetching data.
+    useEffect with values in array: it runs on first render and then any variable that we pass in dependency change it will run
+
+
+useContext ==>
+    creating the context   ====>  In Parent Component we will be import createContext and create a createContext using the variable      
+        import {createContext} from react
+        export const LoginDetails = createContext()
+    providing the context  ====>  Wrap that Parent Component in Provider
+        <LoginDetails.Provider value={true}>
+            <App />
+        </LoginDetails.Provider>
+    consuming the context  ====> import useContext, and import that createContext variable from Parent Component
+        import {useContext} from react
+        import {LoginDetails} from '../App'
+        const login = useContext(LoginDetails)
+
+
+useRef ==>
+
+
+
+useLayoutEffect ===>
+    useLayoutEffect works exactly the same as useEffect(Also the same syntax)
+    But the difference is "When it runs"
+    useEffect runs after the DOM is printed on the browser but useLayoutEffect runs before the DOM is printed on the browser
+    it runs synchronously, after first line then only second line will execute
+
+
+useMemo ==>  same syntax as useEffect
+    useMemo hook is used to aply Memoization in React, memoization is techinque for improving the performance of code
+    it is useful to avoid expensive calculations on every render when the returned value is not change.
+
+    const memoCalculation = useMemo(callback, [denpendency])
+    memoCalculation is for storing the variable which return the calculation after the calculation function in callback function of useMemo, 
+    callback is the calculation function that should happen and it returns the value of calculation
+    whenever the dependency changes then only callback function will happen
+
+
+
+useCallback ==>
+    useCallback is used to return Memoize function
+    improve the performance of our react application
+    useCallback syntax is same as useMemo hook
+    difference is useMemo Memoize value useCallback Memoize Function 
+
+
+
+customHooks ==>

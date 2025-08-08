@@ -78,3 +78,20 @@ What is a WeakMap and WeakSet?
 What is the difference between CommonJS and ES Modules?
 How do you import and export in JavaScript?
 What is dynamic import?
+
+
+
+🔂 Full Priority Order (Execution Stack)  (Event Loop)
+
+1. Synchronous code (Call Stack)
+2. Microtasks:
+   - Promise callbacks
+   - async/await resolutions
+   - queueMicrotask()
+   - MutationObserver
+3. Macrotasks:
+   - setTimeout, setInterval
+   - setImmediate (Node.js)
+   - MessageChannel
+   - UI events (click, input)
+   - requestAnimationFrame (before next paint)

@@ -1,4 +1,136 @@
 
+## React and Redux
+
+201. What is Redux and how does it work with React?
+202. How do you connect React to Redux?
+203. What are the core principles of Redux?
+204. How do you use React Redux hooks?
+205. How do you handle async actions in Redux with React?
+206. How do you optimize Redux performance with React?
+207. How do you structure Redux applications with React?
+208. How do you handle forms with Redux and React?
+209. How do you test Redux-connected React components?
+210. What are the alternatives to Redux for React state management?
+
+## React and Next.js
+
+211. What is Next.js and how does it work with React?
+212. What are the benefits of using Next.js with React?
+213. How do you implement server-side rendering with Next.js?
+214. How do you implement static site generation with Next.js?
+215. How do you handle routing in Next.js?
+216. How do you handle API routes in Next.js?
+217. How do you optimize Next.js applications?
+218. How do you handle authentication in Next.js?
+219. How do you deploy Next.js applications?
+220. What are the best practices for Next.js development?
+
+## React and Gatsby
+
+221. What is Gatsby and how does it work with React?
+222. What are the benefits of using Gatsby with React?
+223. How do you create pages in Gatsby?
+224. How do you handle data in Gatsby?
+225. How do you use GraphQL with Gatsby and React?
+226. How do you optimize Gatsby applications?
+227. How do you handle routing in Gatsby?
+228. How do you implement SEO in Gatsby?
+229. How do you deploy Gatsby applications?
+230. What are the best practices for Gatsby development?
+
+## React Hooks Deep Dive
+
+231. How do React hooks work under the hood?
+232. What are the rules of hooks?
+233. How do you create custom hooks?
+234. How do you handle side effects with hooks?
+235. How do you optimize performance with hooks?
+236. How do you handle complex state with hooks?
+237. How do you test custom hooks?
+238. How do you handle context with hooks?
+239. How do you handle reducers with hooks?
+240. What are the advanced hook patterns?
+
+## React Context API
+
+241. What is the React Context API?
+242. How do you create context in React?
+243. How do you use context in React components?
+244. How do you update context values?
+245. How do you optimize context performance?
+246. How do you handle multiple contexts?
+247. How do you test context in React?
+248. What are the limitations of React Context?
+249. How do you handle context with TypeScript?
+250. When should you use React Context vs Redux?
+
+## React and Webpack
+
+251. How do you configure Webpack for React applications?
+252. What are the essential Webpack configurations for React?
+253. How do you handle CSS in Webpack with React?
+254. How do you optimize Webpack for React production builds?
+255. How do you set up Webpack dev server for React?
+256. How do you handle code splitting with Webpack and React?
+257. How do you configure Webpack loaders for React?
+258. How do you handle environment variables with Webpack and React?
+259. How do you debug Webpack configuration for React?
+260. What are the Webpack best practices for React?
+
+## React and Babel
+
+261. What is Babel and how does it work with React?
+262. How do you configure Babel for React applications?
+263. What are the essential Babel presets for React?
+264. How do you handle JSX transformation with Babel?
+265. How do you configure Babel plugins for React?
+266. How do you handle ES6+ features with Babel and React?
+267. How do you optimize Babel configuration for React?
+268. How do you handle Babel with different environments?
+269. How do you debug Babel issues in React?
+270. What are the Babel best practices for React?
+
+## React and ESLint
+
+271. How do you configure ESLint for React applications?
+272. What are the essential ESLint rules for React?
+273. How do you handle ESLint with React hooks?
+274. How do you configure ESLint with TypeScript and React?
+275. How do you handle ESLint with JSX?
+276. How do you integrate ESLint with Prettier for React?
+277. How do you handle ESLint with different React frameworks?
+278. How do you create custom ESLint rules for React?
+279. How do you debug ESLint issues in React?
+280. What are the ESLint best practices for React?
+
+## React and Prettier
+
+281. How do you configure Prettier for React applications?
+282. What are the essential Prettier settings for React?
+283. How do you handle Prettier with JSX?
+284. How do you integrate Prettier with ESLint for React?
+285. How do you handle Prettier with different React frameworks?
+286. How do you configure Prettier for TypeScript and React?
+287. How do you handle Prettier with CSS-in-JS?
+288. How do you set up Prettier pre-commit hooks for React?
+289. How do you debug Prettier issues in React?
+290. What are the Prettier best practices for React?
+
+## React and Jest
+
+291. How do you configure Jest for React applications?
+292. What are the essential Jest configurations for React?
+293. How do you test React components with Jest?
+294. How do you test React hooks with Jest?
+295. How do you handle mocking in Jest for React?
+296. How do you test React Router with Jest?
+297. How do you test API calls in React with Jest?
+298. How do you handle code coverage with Jest for React?
+299. How do you debug Jest tests for React?
+300. What are the Jest best practices for React?
+
+## React and Cypress
+
 ## React and Cypress
 
 301. How do you use Cypress for end-to-end testing React applications?

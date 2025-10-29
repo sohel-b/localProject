@@ -1,4 +1,43 @@
 
+
+
+191. How do you use TypeScript with React?
+192. How do you type React props with TypeScript?
+193. How do you type React state with TypeScript?
+194. How do you type React hooks with TypeScript?
+195. How do you type React events with TypeScript?
+196. How do you type React context with TypeScript?
+197. How do you type React Router with TypeScript?
+198. How do you type Redux with React and TypeScript?
+199. What are the benefits of using TypeScript with React?
+200. What are the challenges of using TypeScript with React?
+
+## React and Redux
+
+201. What is Redux and how does it work with React?
+202. How do you connect React to Redux?
+203. What are the core principles of Redux?
+204. How do you use React Redux hooks?
+205. How do you handle async actions in Redux with React?
+206. How do you optimize Redux performance with React?
+207. How do you structure Redux applications with React?
+208. How do you handle forms with Redux and React?
+209. How do you test Redux-connected React components?
+210. What are the alternatives to Redux for React state management?
+
+## React and Next.js
+
+211. What is Next.js and how does it work with React?
+212. What are the benefits of using Next.js with React?
+213. How do you implement server-side rendering with Next.js?
+214. How do you implement static site generation with Next.js?
+215. How do you handle routing in Next.js?
+216. How do you handle API routes in Next.js?
+217. How do you optimize Next.js applications?
+218. How do you handle authentication in Next.js?
+219. How do you deploy Next.js applications?
+220. What are the best practices for Next.js development?
+
 ## React and Gatsby
 
 221. What is Gatsby and how does it work with React?

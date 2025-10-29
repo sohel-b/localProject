@@ -286,3 +286,302 @@
 219. How do you secure sensitive configuration data?
 220. What are the configuration best practices for Express.js?
 
+
+## Deployment
+
+221. How do you deploy Express.js applications?
+222. How do you deploy Express.js to Heroku?
+223. How do you deploy Express.js to AWS?
+224. How do you deploy Express.js to DigitalOcean?
+225. How do you deploy Express.js with Docker?
+226. How do you use PM2 for Express.js deployment?
+227. How do you handle zero-downtime deployments for Express.js?
+228. How do you configure load balancers for Express.js?
+229. How do you monitor deployed Express.js applications?
+230. What are the deployment best practices for Express.js?
+
+## Process Management
+
+231. How do you manage Express.js processes?
+232. What is PM2 for Express.js process management?
+233. How do you use PM2 clustering with Express.js?
+234. How do you handle process crashes in Express.js?
+235. How do you implement graceful shutdown in Express.js?
+236. How do you monitor Express.js processes?
+237. How do you handle process memory limits?
+238. How do you implement process auto-restart?
+239. How do you scale Express.js processes?
+240. What are the process management best practices?
+
+## WebSockets
+
+241. How do you implement WebSockets in Express.js?
+242. How do you use Socket.io with Express.js?
+243. How do you handle WebSocket connections in Express.js?
+244. How do you authenticate WebSocket connections in Express.js?
+245. How do you handle WebSocket rooms in Express.js?
+246. How do you broadcast messages with WebSockets in Express.js?
+247. How do you handle WebSocket errors in Express.js?
+248. How do you scale WebSocket applications with Express.js?
+249. How do you test WebSocket functionality in Express.js?
+250. What are the WebSocket best practices for Express.js?
+
+## GraphQL
+
+251. How do you implement GraphQL with Express.js?
+252. How do you use Apollo Server with Express.js?
+253. How do you define GraphQL schemas in Express.js?
+254. How do you create GraphQL resolvers in Express.js?
+255. How do you handle GraphQL mutations in Express.js?
+256. How do you handle GraphQL subscriptions in Express.js?
+257. How do you authenticate GraphQL APIs in Express.js?
+258. How do you handle GraphQL errors in Express.js?
+259. How do you integrate GraphQL with Express.js middleware?
+260. What are the GraphQL best practices for Express.js?
+
+## Rate Limiting
+
+261. How do you implement rate limiting in Express.js?
+262. What is the express-rate-limit middleware?
+263. How do you implement sliding window rate limiting?
+264. How do you implement token bucket rate limiting?
+265. How do you rate limit specific routes in Express.js?
+266. How do you rate limit by IP address in Express.js?
+267. How do you rate limit by user in Express.js?
+268. How do you handle rate limit exceeded responses?
+269. How do you store rate limit data in Redis?
+270. What are the rate limiting best practices?
+
+## CORS
+
+271. What is CORS and why is it important?
+272. How do you handle CORS in Express.js?
+273. What is the cors middleware in Express.js?
+274. How do you configure CORS for specific origins?
+275. How do you handle preflight requests in Express.js?
+276. How do you set CORS headers manually in Express.js?
+277. How do you handle CORS credentials in Express.js?
+278. How do you implement dynamic CORS policies?
+279. How do you test CORS functionality in Express.js?
+280. What are the CORS best practices for Express.js?
+
+## Compression
+
+281. How do you implement compression in Express.js?
+282. What is the compression middleware in Express.js?
+283. How do you configure compression levels in Express.js?
+284. How do you compress specific response types?
+285. How do you handle compression for static files?
+286. How do you implement Brotli compression in Express.js?
+287. How do you test compression functionality?
+288. How do you handle compression errors?
+289. How do you monitor compression performance?
+290. What are the compression best practices for Express.js?
+
+## Health Checks
+
+291. How do you implement health checks in Express.js?
+292. What should health check endpoints include?
+293. How do you check database connectivity in health checks?
+294. How do you check external service dependencies?
+295. How do you implement liveness and readiness probes?
+296. How do you handle health check failures?
+297. How do you monitor health check status?
+298. How do you implement graceful degradation?
+299. How do you test health check functionality?
+300. What are the health check best practices for Express.js?
+
+## Internationalization
+
+301. How do you implement internationalization in Express.js?
+302. What are the popular i18n libraries for Express.js?
+303. How do you handle multiple languages in Express.js?
+304. How do you detect user language preferences?
+305. How do you translate content in Express.js?
+306. How do you handle date and time localization?
+307. How do you handle number formatting in Express.js?
+308. How do you implement RTL language support?
+309. How do you manage translation files?
+310. What are the i18n best practices for Express.js?
+
+## Caching Strategies
+
+311. How do you implement caching in Express.js?
+312. What are the different caching strategies in Express.js?
+313. How do you implement in-memory caching in Express.js?
+314. How do you use Redis for caching in Express.js?
+315. How do you implement cache invalidation?
+316. How do you handle cache warming?
+317. How do you implement HTTP caching headers?
+318. How do you implement ETag caching?
+319. How do you implement conditional requests?
+320. What are the caching best practices for Express.js?
+
+## API Versioning
+
+321. How do you implement API versioning in Express.js?
+322. What are the different API versioning strategies?
+323. How do you version APIs using URL paths?
+324. How do you version APIs using query parameters?
+325. How do you version APIs using headers?
+326. How do you handle API deprecation?
+327. How do you maintain multiple API versions?
+328. How do you route requests to different API versions?
+329. How do you document API versioning?
+330. What are the API versioning best practices?
+
+## Pagination
+
+331. How do you implement pagination in Express.js?
+332. What are the different pagination strategies?
+333. How do you implement offset-based pagination?
+334. How do you implement cursor-based pagination?
+335. How do you handle pagination metadata?
+336. How do you implement infinite scrolling?
+337. How do you optimize pagination queries?
+338. How do you handle large dataset pagination?
+339. How do you test pagination functionality?
+340. What are the pagination best practices for Express.js?
+
+## Search and Filtering
+
+341. How do you implement search functionality in Express.js?
+342. How do you implement filtering in Express.js APIs?
+343. How do you handle complex search queries?
+344. How do you implement full-text search?
+345. How do you integrate Elasticsearch with Express.js?
+346. How do you handle search pagination?
+347. How do you implement search autocomplete?
+348. How do you optimize search performance?
+349. How do you validate search parameters?
+350. What are the search and filtering best practices?
+
+## Sorting and Ordering
+
+351. How do you implement sorting in Express.js APIs?
+352. How do you handle multiple sort criteria?
+353. How do you sort by nested fields?
+354. How do you handle ascending and descending order?
+355. How do you validate sort parameters?
+356. How do you optimize sorting queries?
+357. How do you handle sorting with pagination?
+358. How do you implement custom sorting logic?
+359. How do you test sorting functionality?
+360. What are the sorting best practices for Express.js?
+
+## Data Transformation
+
+361. How do you transform response data in Express.js?
+362. How do you implement data serialization?
+363. How do you use data transformation middleware?
+364. How do you handle nested data transformation?
+365. How do you implement field selection?
+366. How do you handle data formatting?
+367. How do you implement data aggregation?
+368. How do you handle data validation during transformation?
+369. How do you optimize data transformation performance?
+370. What are the data transformation best practices?
+
+## Background Jobs
+
+371. How do you implement background jobs in Express.js?
+372. How do you use Bull queue with Express.js?
+373. How do you use Agenda for background jobs?
+374. How do you handle job scheduling in Express.js?
+375. How do you monitor background jobs?
+376. How do you handle job failures and retries?
+377. How do you implement job priorities?
+378. How do you scale background job processing?
+379. How do to test background job functionality?
+380. What are the background job best practices for Express.js?
+
+## Email Services
+
+381. How do you send emails from Express.js applications?
+382. How do you use Nodemailer with Express.js?
+383. How do you handle email templates in Express.js?
+384. How do you send HTML emails from Express.js?
+385. How do you handle email attachments in Express.js?
+386. How do you implement email queuing in Express.js?
+387. How do you handle email delivery failures?
+388. How do you track email analytics?
+389. How do you test email functionality?
+390. What are the email service best practices for Express.js?
+
+## File Processing
+
+391. How do you process uploaded files in Express.js?
+392. How do you resize images in Express.js?
+393. How do you compress files in Express.js?
+394. How do you convert file formats in Express.js?
+395. How do you generate thumbnails in Express.js?
+396. How do you handle file streaming in Express.js?
+397. How do you implement file processing queues?
+398. How do you optimize file processing performance?
+399. How do you handle file processing errors?
+400. What are the file processing best practices for Express.js?
+
+## PDF Generation
+
+401. How do you generate PDFs in Express.js?
+402. What are the popular PDF generation libraries for Express.js?
+403. How do you create PDFs from HTML in Express.js?
+404. How do you add images to PDFs in Express.js?
+405. How do you create tables in PDFs?
+406. How do you handle PDF templates in Express.js?
+407. How do you stream PDFs to clients?
+408. How do you secure PDF generation?
+409. How do you optimize PDF generation performance?
+410. What are the PDF generation best practices for Express.js?
+
+## Real-time Features
+
+411. How do you implement real-time features in Express.js?
+412. How do you handle Server-Sent Events in Express.js?
+413. How do you implement real-time notifications?
+414. How do you handle real-time data synchronization?
+415. How do you scale real-time applications?
+416. How do you test real-time functionality?
+417. How do you monitor real-time connections?
+418. How do you handle real-time errors?
+419. How do you optimize real-time performance?
+420. What are the real-time feature best practices for Express.js?
+
+## API Gateway Patterns
+
+421. How do you implement API gateway patterns in Express.js?
+422. How do you handle request routing in API gateways?
+423. How do you implement request aggregation?
+424. How do you handle protocol translation?
+425. How do you implement request/response transformation?
+426. How do you handle authentication in API gateways?
+427. How do you implement rate limiting in API gateways?
+428. How do you monitor API gateway performance?
+429. How do you handle API gateway failures?
+430. What are the API gateway best practices for Express.js?
+
+## Microservices with Express.js
+
+431. How do you build microservices with Express.js?
+432. How do you handle inter-service communication?
+433. How do you implement service discovery?
+434. How do you handle load balancing in microservices?
+435. How do you implement distributed tracing?
+436. How do you handle configuration management?
+437. How do you implement circuit breakers?
+438. How do you monitor microservices?
+439. How do you test microservices?
+440. What are the microservices best practices for Express.js?
+
+## Docker and Express.js
+
+441. How do you containerize Express.js applications?
+442. How do you create a Dockerfile for Express.js?
+443. How do you optimize Docker images for Express.js?
+444. How do you handle environment variables in Docker?
+445. How do you implement multi-stage builds for Express.js?
+446. How do you use Docker Compose with Express.js?
+447. How do you handle data persistence in containers?
+448. How do you orchestrate Express.js containers?
+449. How do you monitor containerized Express.js applications?
+450. What are the Docker best practices for Express.js?

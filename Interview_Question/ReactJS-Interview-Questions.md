@@ -1,5 +1,17 @@
 
-## React Patterns
+## Basic Concepts
+
+1. What is React.js and why is it used?
+2. What are the main features of React.js?
+3. What is JSX in React?
+4. What is the difference between React and React DOM?
+5. What is a virtual DOM in React?
+6. How does React's virtual DOM work?
+7. What are the advantages of using React?
+8. What is declarative programming in React?
+9. What is component-based architecture in React?
+10. How does React handle data flow?
+
 
 171. What are the common React patterns?
 172. What is the higher-order component (HOC) pattern?

@@ -1,4 +1,16 @@
 
+## React Patterns
+
+171. What are the common React patterns?
+172. What is the higher-order component (HOC) pattern?
+173. What is the render prop pattern?
+174. What is the compound component pattern?
+175. What is the provider pattern in React?
+176. What is the children prop pattern?
+177. What is the state reducer pattern?
+178. What is the control props pattern?
+179. What is the custom hook pattern?
+180. How do you choose the right React pattern?
 ## React and TypeScript
 
 191. How do you use TypeScript with React?

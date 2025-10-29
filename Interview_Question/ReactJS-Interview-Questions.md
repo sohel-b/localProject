@@ -1,4 +1,17 @@
 
+## React and TypeScript
+
+191. How do you use TypeScript with React?
+192. How do you type React props with TypeScript?
+193. How do you type React state with TypeScript?
+194. How do you type React hooks with TypeScript?
+195. How do you type React events with TypeScript?
+196. How do you type React context with TypeScript?
+197. How do you type React Router with TypeScript?
+198. How do you type Redux with React and TypeScript?
+199. What are the benefits of using TypeScript with React?
+200. What are the challenges of using TypeScript with React?
+
 ## React and Redux
 
 201. What is Redux and how does it work with React?

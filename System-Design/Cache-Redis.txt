@@ -1,0 +1,21 @@
+CACHE
+
+Caching is a concept that involves storing frequently accessed data in a location that is easily and quickly accessible. 
+The purpose of caching is to improve the performance and efficiency of a system by reducing the amount of time it takes to access frequently accessed data.
+Caching acts as the local store for the data and retrieving the data from this local or temporary storage is easier and faster than retrieving it from the database.
+
+
+
+Redis (Remote Dictionary Server)
+Caching frequently accessed data to improve access time.
+Session storage for web applications
+Real-time analytics and leader boards.
+Managing queues or task lists in background job systems.
+
+How Redis Work?
+Redis acts as a caching layer between the database and the client to speed up data access and reduce the load on the main database.
+When a client asks for data, the API Gateway forwards the request to Redis
+If Redis has the data (cache hit), it returns it quickly through the API Gateway to the client. 
+If the data is missing (cache miss), Redis retrieves it from the database, stores it in the cache for future requests, and then passes it back through the API Gateway to the client. 
+This flow speeds up response times and reduces the database load.
+

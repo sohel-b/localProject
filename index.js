@@ -213,22 +213,22 @@
 // });
 
 //Handling Different Routes
-import http from 'http'
-const server = http.createServer((req, res) => {
-    if (req.url === '/json') {
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ message: 'Hello, JSON!' }));
-    } else if (req.url === '/about') {
-        res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.end('<h1>About Page</h1>');
-    } else {
-        res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.end('<h1>Hello, HTML World!</h1>');
-    }
-});
-server.listen(3000, () => {
-    console.log('Server is running on http://localhost:3000');
-});
+// import http from 'http'
+// const server = http.createServer((req, res) => {
+//     if (req.url === '/json') {
+//         res.writeHead(200, { 'Content-Type': 'application/json' });
+//         res.end(JSON.stringify({ message: 'Hello, JSON!' }));
+//     } else if (req.url === '/about') {
+//         res.writeHead(200, { 'Content-Type': 'text/html' });
+//         res.end('<h1>About Page</h1>');
+//     } else {
+//         res.writeHead(200, { 'Content-Type': 'text/html' });
+//         res.end('<h1>Hello, HTML World!</h1>');
+//     }
+// });
+// server.listen(3000, () => {
+//     console.log('Server is running on http://localhost:3000');
+// });
 
 
 // import bcrypt from 'bcrypt'
@@ -268,11 +268,30 @@ server.listen(3000, () => {
 // run()
 
 
+// Fetch call
+const fetchFunc = async () => {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+    if(!response.ok) {
+        console.log(response.status)
+    }
+    const data = await response.json()
+    console.log(data)
+}
+fetchFunc()
 
 
-
-
-
+// Streams
+import express from 'express'
+import fs from 'fs'
+const app = express()
+app.get("/get", (req, res) => {
+    const stream = fs.createReadStream("./data", "utf-8")
+    stream.on("data", (chunk) => res.send(chunk))
+    stream.on("end", () => res.end())
+})
+app.listen(3000, (err) => {
+    console.log("Server is running at http://localhost:3000")
+})
 
 
 

@@ -515,13 +515,25 @@ const myPromise = new Promise((resolve, reject) => {
 2. **Fulfilled** – operation completed successfully; `resolve` called.  
 3. **Rejected** – operation failed; `reject` called.
 
-**46. How do you handle promise rejections?**  
+  **46. How do you handle promise rejections?**  
 - Attach a `.catch()` handler: `promise.catch(err => { /* handle */ });`  
 - Provide a second argument to `.then()`: `promise.then(onFulfilled, onRejected);`  
 - Use `try/catch` with `await` inside an async function.
 
 **47. What is `Promise.all()` in Node.js?**  
-`Promise.all(iterable)` returns a single Promise that fulfills when **all** promises in the iterable have fulfilled, yielding an array of their results. If any promise rejects, the returned promise rejects immediately with that reason.
+`Promise.all(iterable)` returns a single Promise that fulfills when **all** promises in the iterable have fulfilled, yielding an array of their results. If any promise rejects, the returned promise rejects immediately with that reason. (OR)  Waits for all promises in the iterable to settle. | Resolves with an array of each promise’s fulfilled value, preserving order. | Rejects immediately when the first promise rejects, with that rejection reason
+
+const promise1 = Promise.resolve("Promise 1");
+const promise2 = Promise.resolve("Promise 2")
+
+Promise.all([promise1, promise2])
+  .then(values => {
+    console.log(values); // Output: ["Promise 1", "Promise 2"]
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
 
 **48. What is `Promise.race()` in Node.js?**  
 `Promise.race(iterable)` returns a Promise that settles as soon as **any** of the supplied promises settles, adopting that promise’s fulfillment value or rejection reason.
@@ -529,8 +541,18 @@ const myPromise = new Promise((resolve, reject) => {
 **49. What is `Promise.allSettled()` in Node.js?**  
 `Promise.allSettled(iterable)` returns a Promise that fulfills after **all** input promises have settled (either fulfilled or rejected). The result is an array of objects describing each outcome: `{ status: "fulfilled", value: … }` or `{ status: "rejected", reason: … }`.
 
-**50. What is `Promise.any()` in Node.js?**  
+**50. What is `Promise.any()` in Node.js?**
 `Promise.any(iterable)` returns a Promise that fulfills as soon as **any** of the input promises fulfills, with the value of the first fulfilled promise. If all promises reject, it rejects with an `AggregateError` containing all rejection reasons.
+
+const promise1 = Promise.resolve("Promise 1");
+const promise2 = Promise.resolve("Promise 2")
+const promise3 = Promise.reject("Promise 3")
+
+const promises = [promise1, promise2, promise3];
+
+Promise.any(promises).then((value) => console.log(value));
+
+// Expected output: "quick"
 
 
 **51. What is async/await in Node.js?**  

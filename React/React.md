@@ -56,6 +56,16 @@ Both receive *props* as input and may maintain *state* internally.
 - **Class Components** – older style using `this.state` and lifecycle methods.  
 - **Pure Components** – class components that implement a shallow prop comparison (`React.PureComponent`) to avoid unnecessary re‑renders.  
 - **Higher‑Order Components (HOCs)** – functions that take a component and return an enhanced component (used for cross‑cutting concerns).
+        function greet(name){
+            return `Hi!! ${name} `;
+        }
+
+        function greet_name(greeting,message,name){
+              console.log(`${greeting(name)} ${message}`);
+        }
+
+        greet_name(greet,'Welcome To GeeksForGeeks','JavaScript');
+
 
 ## 13. What is the difference between functional and class components?
 - **Syntax & Boilerplate** – Functional components are simple functions; class components require a class definition, constructor, and `this` binding.  
@@ -1312,12 +1322,15 @@ componentDidCatch(error, errorInfo) {
 An HOC is a function that takes a component and returns a new component with added props or behavior.
 
 ```jsx
-function withAuth(Component) {
-  return function Authenticated(props) {
-    const auth = useAuth();
-    return auth ? <Component {...props} /> : <Redirect to="/login" />;
-  };
+function greet(name){
+    return `Hi!! ${name} `;
 }
+
+function greet_name(greeting,message,name){
+       console.log(`${greeting(name)} ${message}`);
+}
+
+greet_name(greet,'Welcome To GeeksForGeeks','JavaScript');
 ```
 
 ## 173. What is the render prop pattern?

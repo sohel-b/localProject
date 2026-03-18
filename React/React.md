@@ -333,16 +333,43 @@ The Context API provides a way to **share values** (e.g., theme, user, locale) a
 
 ## 53. How do you use React Context for state management?
 ```jsx
-const ThemeContext = React.createContext('light');
+import React, { createContext, useContext, useState } from 'react';
 
-function App() {
-  const [theme, setTheme] = useState('light');
+/* 1️⃣ Create the context */
+const ThemeContext = createContext();
+
+/* 2️⃣ Provider component that holds the shared state */
+function ThemeProvider({ children }) {
+  const [theme, setTheme] = useState('light'); // "light" or "dark"
+
+  const toggleTheme = () =>
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      <Toolbar />
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {children}
     </ThemeContext.Provider>
   );
 }
+
+/* 3️⃣ Consumer component that uses the context */
+function ThemedButton() {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
+  return <button onClick={toggleTheme}>Current theme: {theme}</button>;
+}
+
+/* 4️⃣ App component that wires everything together */
+export default function App() {
+
+  return (
+    <ThemeProvider>
+      <h1>React Context Example</h1>
+      <ThemedButton />
+    </ThemeProvider>
+  );
+}
+
 ```
 Any descendant can read or update the theme via `useContext(ThemeContext)`.
 

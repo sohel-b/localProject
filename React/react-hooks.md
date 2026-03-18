@@ -60,7 +60,7 @@ notes link for all hooks concepts https://drive.google.com/drive/folders/1-wk8nr
 
 A: useState is a hook used to manage state in functional components, while useEffect is a hook used to manage side effects (like fetching data, setting up event listeners, or updating the DOM) in functional components.
 
-useEffect ==> 
+useEffect ==>  This hook runs asynchronously after the browser has painted the screen. This means the browser updates the DOM and renders the component, and then useEffect's callback function executes. This non-blocking nature makes it ideal for most side effects that don't require immediate visual updates.
 useEffect(() => {
     // callback Function(what to happen)
 }, // dependency(when to happen) )
@@ -83,6 +83,47 @@ useContext is a React Hook that enables functional components to consume values 
         import {useContext} from react
         import {LoginDetails} from '../App'
         const login = useContext(LoginDetails)
+
+        //Another example
+
+        import React, { createContext, useContext, useState } from 'react';
+
+        /* 1️⃣ Create the context */
+        const ThemeContext = createContext();
+
+        /* 2️⃣ Provider component that holds the shared state */
+        function ThemeProvider({ children }) {
+          const [theme, setTheme] = useState('light'); // "light" or "dark"
+
+          const toggleTheme = () =>
+            setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+
+          return (
+            <ThemeContext.Provider value={{ theme, toggleTheme }}>
+              {children}
+            </ThemeContext.Provider>
+          );
+        }
+
+        /* 3️⃣ Consumer component that uses the context */
+        function ThemedButton() {
+          const { theme, toggleTheme } = useContext(ThemeContext);
+
+          return <button onClick={toggleTheme}>Current theme: {theme}</button>;
+        }
+
+        /* 4️⃣ App component that wires everything together */
+        export default function App() {
+
+          return (
+            <ThemeProvider>
+              <h1>React Context Example</h1>
+              <ThemedButton />
+            </ThemeProvider>
+          );
+        }
+
+
 
 
 useRef ==>

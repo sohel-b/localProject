@@ -1,0 +1,150 @@
+# MongoDB Query Questions and Answers
+
+| # | Question | Example Query | Explanation |
+|---|----------|---------------|-------------|
+| 386 | Write a query to find all documents where **age** is greater than 25. | `db.collection.find({ age: { $gt: 25 } })` | `$gt` selects documents with a field value greater than the specified value. |
+| 387 | Write a query to find all documents where **status** is `'active'` and **age** is between 20 and 30. | `db.collection.find({ status: "active", age: { $gte: 20, $lte: 30 } })` | Combines equality and range operators `$gte`/`$lte`. |
+| 388 | Write a query to find all documents where the **name** field contains `'john'`. | `db.collection.find({ name: /john/i })` | Uses a case‑insensitive regular expression. |
+| 389 | Write a query to find all documents where the **tags** array contains `'mongodb'`. | `db.collection.find({ tags: "mongodb" })` | Matching an array element works like a simple equality test. |
+| 390 | Write a query to find all documents where **address.city** is `'New York'`. | `db.collection.find({ "address.city": "New York" })` | Dot notation accesses embedded fields. |
+| 391 | Write a query to sort documents by **name** in ascending order and limit to 10 results. | `db.collection.find().sort({ name: 1 }).limit(10)` | `1` for ascending sort; `limit` restricts result count. |
+| 392 | Write a query to group documents by **category** and count the number of documents in each group. | `db.collection.aggregate([ { $group: { _id: "$category", count: { $sum: 1 } } } ])` | `$group` aggregates by a field; `$sum:1` counts docs. |
+| 393 | Write a query to find the average **salary** for each **department**. | `db.collection.aggregate([ { $group: { _id: "$department", avgSalary: { $avg: "$salary" } } } ])` | `$avg` computes the average of a numeric field. |
+| 394 | Write a query to update all documents where **status** is `'inactive'` to `'active'`. | `db.collection.updateMany({ status: "inactive" }, { $set: { status: "active" } })` | `updateMany` modifies all matching docs. |
+| 395 | Write a query to increment the **score** field by 5 for all documents where **name** is `'john'`. | `db.collection.updateMany({ name: "john" }, { $inc: { score: 5 } })` | `$inc` adds a numeric value to a field. |
+| 396 | Write a query to delete all documents where **created_date** is older than 1 year. | `db.collection.deleteMany({ created_date: { $lt: new Date(new Date() - 365*24*60*60*1000) } })` | `$lt` selects dates earlier than the computed date. |
+| 397 | Write a query to find all documents where the **email** field exists. | `db.collection.find({ email: { $exists: true } })` | `$exists` checks for field presence. |
+| 398 | Write a query to find all documents where the **phone** field is of type **string**. | `db.collection.find({ phone: { $type: "string" } })` | `$type` filters by BSON type. |
+| 399 | Write a query to perform a case‑insensitive search on the **name** field for `'alice'`. | `db.collection.find({ name: { $regex: "^alice$", $options: "i" } })` | `$regex` with `i` option makes it case‑insensitive. |
+| 400 | Write a query to find all documents where the **array** field has exactly 3 elements. | `db.collection.find({ array: { $size: 3 } })` | `$size` matches arrays of a specific length. |
+| 401 | Write a query to find all documents where the **array** contains all specified values `["a","b","c"]`. | `db.collection.find({ array: { $all: ["a","b","c"] } })` | `$all` ensures all listed elements are present. |
+| 402 | Write a query to find all documents where **any** of the specified conditions match (status `'active'` **or** age > 30). | `db.collection.find({ $or: [ { status: "active" }, { age: { $gt: 30 } } ] })` | `$or` combines multiple criteria. |
+| 403 | Write a query to perform a text search on multiple fields (`title` and `description`) for `'mongodb'`. | `db.collection.createIndex({ title: "text", description: "text" })\ndb.collection.find({ $text: { $search: "mongodb" } })` | Create a text index then use `$text`. |
+| 404 | Write a query to find documents within a specified geographic area (polygon). | `db.collection.find({ location: { $geoWithin: { $polygon: [ [ -73, 40 ], [ -74, 40 ], [ -74, 41 ], [ -73, 41 ] ] } } })` | `$geoWithin` with `$polygon` matches points inside the polygon. |
+| 405 | Write a query to find documents near a specific geographic location (longitude -73.97, latitude 40.77) within 5 km. | `db.collection.find({ location: { $near: { $geometry: { type: "Point", coordinates: [ -73.97, 40.77 ] }, $maxDistance: 5000 } } })` | `$near` with `$maxDistance` (meters). |
+| 406 | Write a query to unwind an **array** field and group the results by the unwound value. | `db.collection.aggregate([ { $unwind: "$tags" }, { $group: { _id: "$tags", count: { $sum: 1 } } } ])` | `$unwind` deconstructs the array; `$group` aggregates. |
+| 407 | Write a query to perform a left join between two collections (`orders` and `customers`). | `db.orders.aggregate([ { $lookup: { from: "customers", localField: "customerId", foreignField: "_id", as: "customerInfo" } }, { $unwind: { path: "$customerInfo", preserveNullAndEmptyArrays: true } } ])` | `$lookup` performs the left outer join. |
+| 408 | Write a query to calculate the running total of a field **amount** ordered by **date**. | `db.sales.aggregate([ { $sort: { date: 1 } }, { $setWindowFields: { sortBy: { date: 1 }, output: { runningTotal: { $sum: "$amount", window: { documents: ["unbounded", "current"] } } } } ])` | `$setWindowFields` (MongoDB 5.0+) computes running totals. |
+| 409 | Write a query to find duplicate documents based on a field **email**. | `db.collection.aggregate([ { $group: { _id: "$email", count: { $sum: 1 }, docs: { $push: "$_id" } } }, { $match: { count: { $gt: 1 } } } ])` | Groups by `email` and selects groups with count > 1. |
+| 410 | Write a query to remove duplicate documents based on **email**, keeping the first. | `db.collection.aggregate([ { $setWindowFields: { sortBy: { _id: 1 }, output: { rank: { $rank: {} } } } }, { $match: { rank: { $gt: 1 } } }, { $merge: { into: "collection", whenMatched: "replace", whenNotMatched: "insert" } } ])` *(or use a script that deletes docs where `rank > 1`)* |
+| 411 | Write a query to find the **nth** highest salary (e.g., 3rd highest). | `db.employees.aggregate([ { $sort: { salary: -1 } }, { $skip: 2 }, { $limit: 1 } ])` | Skip `n-1` records after sorting descending. |
+| 412 | Write a query to find documents with **missing fields** (`address`). | `db.collection.find({ address: { $exists: false } })` |
+ to find documents with **null** values in **phone**. | `db.collection.find({ phone: null })` |
+| 414 | Write a query to perform **conditional aggregation**: sum `sales` only when `region` is `'US'`. | `db.sales.aggregate([ { $group: { _id: null, usSales: { $sum: { $cond: [{ $eq: ["$region", "US"] }, "$amount", 0] } } } ])` |
+| 415 | Write a query to create a **computed field** `fullName` from `firstName` and `lastName`. | `db.users.aggregate([ { $addFields: { fullName: { $concat: ["$firstName", " ", "$lastName"] } } } ])` |
+| 416 | Write a query to filter aggregation results based on a **computed field** (`total > 1000`). | `db.sales.aggregate([ { $addFields: { total: { $multiply: ["$price", "$quantity"] } } }, { $match: { total: { $gt: 1000 } } } ])` |
+| 417 | Write a query to perform **string manipulation**: convert `name` to uppercase. | `db.collection.aggregate([ { $project: { nameUpper: { $toUpper: "$name" }, _id: 0 } } ])` |
+| 418 | Write a query to perform **date calculations**: add 30 days to `orderDate`. | `db.orders.aggregate([ { $addFields: { dueDate: { $add: ["$orderDate", 30 * 24 * 60 * 60000] } } } ])` *(30 days in milliseconds)* |
+| 419 | Write a query to handle **array operations**: push a new tag `"new"` to `tags` array. | `db.collection.updateMany({}, { $push: { tags: "new" } })` |
+| 420 | Write a query to **optimize a complex aggregation pipeline** (example using `$match` early). | `db.sales.aggregate([ { $match: { status: "completed" } }, { $project: { _id: 0, amount: 1, date: 1 } }, { $group: { _id: { $dateToString: { format: "%Y-%m-%d", date: "$date" } }, dailyTotal: { $sum: "$amount" } } }, { $sort: { "_id": 1 } } ])` |
+
+
+
+
+
+
+
+
+
+
+
+
+[
+  {
+    "name": "United States",
+    "capital": "Washington, D.C.",
+    "continent": "North America",
+    "languages": ["English"],
+    "population": 328239523,
+    "states": [
+      { "name": "California", "population": 39538223 },
+      { "name": "Texas", "population": 29145505 },
+      { "name": "New York", "population": 20201249 }
+    ],
+    "economy": {
+      "gdp": 21433226,
+      "currency": "USD",
+      "majorIndustries": ["Technology", "Finance", "Healthcare"]
+    }
+  },
+  {
+    "name": "Ivory Coast",
+    "capital": "Abidjan",
+    "continent": "Africa",
+    "languages": ["French"],
+    "population": 26378274,
+    "regions": [
+      { "name": "Lagunes", "population": 2500000 },
+      { "name": "Savanes", "population": 1800000 }
+    ],
+    "economy": {
+      "gdp": 58000,
+      "currency": "XOF",
+      "majorIndustries": ["Cocoa", "Coffee", "Petroleum"]
+    }
+  },
+  {
+    "name": "France",
+    "capital": "Paris",
+    "continent": "Europe",
+    "languages": ["French"],
+    "population": 67081000,
+    "departments": [
+      { "name": "Île-de-France", "population": 12278210 },
+      { "name": "Provence-Alpes-Côte d'Azur", "population": 5066000 }
+    ],
+    "economy": {
+      "gdp": 2715518,
+      "currency": "EUR",
+      "majorIndustries": ["Aerospace", "Luxury Goods", "Tourism"]
+    }
+  },
+  {
+    "name": "Australia",
+    "capital": "Canberra",
+    "continent": "Australia",
+    "languages": ["English"],
+    "population": 25681300,
+    "states": [
+      { "name": "New South Wales", "population": 8166369 },
+      { "name": "Victoria", "population": 6680648 }
+    ],
+    "economy": {
+      "gdp": 1392680,
+      "currency": "AUD",
+      "majorIndustries": ["Mining", "Education", "Tourism"]
+    }
+  },
+  {
+    "name": "Japan",
+    "capital": "Tokyo",
+    "continent": "Asia",
+    "languages": ["Japanese"],
+    "population": 125960000,
+    "prefectures": [
+      { "name": "Tokyo", "population": 13929286 },
+      { "name": "Osaka", "population": 8839469 }
+    ],
+    "economy": {
+      "gdp": 5064873,
+      "currency": "JPY",
+      "majorIndustries": ["Automotive", "Electronics", "Robotics"]
+    }
+  },
+  {
+    "name": "Brazil",
+    "capital": "Brasília",
+    "continent": "South America",
+    "languages": ["Portuguese"],
+    "population": 210147125,
+    "states": [
+      { "name": "São Paulo", "population": 46289333 },
+      { "name": "Rio de Janeiro", "population": 17264943 }
+    ],
+    "economy": {
+      "gdp": 1444731,
+      "currency": "BRL",
+      "majorIndustries": ["Agriculture", "Mining", "Energy"]
+    }
+  }
+]

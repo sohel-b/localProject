@@ -467,35 +467,76 @@ function memoizeWithWeakMap(fn) {
 }
 
 // Debouncing
-function debounce(func, wait, immediate = false) {
-    let timeout;
-    
-    return function executedFunction(...args) {
-        const later = () => {
-            timeout = null;
-            if (!immediate) func(...args);
-        };
-        
-        const callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        
-        if (callNow) func(...args);
-    };
+import React, {useState, useEffect} from 'react';
+
+export function App(props) {
+  const [value, setValue] = useState("")
+  const [debounce, setDebounce] = useState("")
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if(value) {
+        setDebounce(value)
+      }
+    }, 3000)
+    return () => {
+      clearTimeout(timer)
+    }
+  }, [value])
+  useEffect(() => {
+    if(debounce) {
+      console.log("Api Call is Triggered")
+    }
+  })
+  return (
+    <div className='App'>
+      <h1>Hello React.</h1>
+      <h2>Start editing to see some magic happen!</h2>
+      <input type="text" placeholder="Search..." value={value} onChange={(e) => setValue(e.target.value)} />
+    </div>
+  );
 }
+// Log to console
+console.log('Hello console')
 
 // Throttling
-function throttle(func, limit) {
-    let inThrottle;
-    
-    return function(...args) {
-        if (!inThrottle) {
-            func.apply(this, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    };
+import React, {useState, useEffect, useCallback} from 'react';
+
+export function App(props) {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  // Define a throttled version of the API call function
+  const throttledAPICall = useCallback(throttle((searchTerm) => {
+    console.log('API call with search term:', searchTerm);
+  }, 3000), []);
+
+  useEffect(() => {
+    throttledAPICall(searchTerm);
+  }, [searchTerm, throttledAPICall]);
+
+  function throttle(func, limit) {
+  let inThrottle = false;
+  return function() {
+    const args = arguments;
+    const context = this;
+    if (!inThrottle) {
+      func.apply(context, args);
+      inThrottle = true;
+      setTimeout(() => inThrottle = false, limit);
+    }
+  }
 }
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <p> Search  </p>
+        <input type='text' onChange={(e) => setSearchTerm(e.target.value)} />
+      </header>
+    </div>
+  );
+}
+// Log to console
+console.log('Hello console')
 
 // Usage Examples
 const debouncedSearch = debounce((query) => {

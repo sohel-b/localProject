@@ -1092,3 +1092,18 @@
 828. Design a global e-commerce database
 829. Design a social networking database
 830. Design a real-time collaboration database
+
+
+__Basic SELECT__
+__Filtering & Comparison__
+__Sorting__
+__Limiting Results__
+__Aggregate Functions__
+__Joins__
+__Data Modification__
+__Subqueries__
+__Set Operations__
+__Indexes & Performance__
+
+
+

@@ -536,8 +536,9 @@ Promise.all([promise1, promise2])
 
 
 **48. What is `Promise.race()` in Node.js?**  
-`Promise.race(iterable)` returns a Promise that settles as soon as **any** of the supplied promises settles, adopting that promise’s fulfillment value or rejection reason.
+`Promise.race(iterable)` returns a Promise that settles (either fulfills or rejects) as soon as any of the input Promises settles, regardless of whether it fulfills or rejects. The outcome of Promise.race() will be the outcome of the first Promise to settle.
 
+ 
 **49. What is `Promise.allSettled()` in Node.js?**  
 `Promise.allSettled(iterable)` returns a Promise that fulfills after **all** input promises have settled (either fulfilled or rejected). The result is an array of objects describing each outcome: `{ status: "fulfilled", value: … }` or `{ status: "rejected", reason: … }`.
 
